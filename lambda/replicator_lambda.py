@@ -63,7 +63,10 @@ def handle_delete_event(key):
         table.update_item(
             Key={"object_name": key, "copy_id": item["copy_id"]},
             UpdateExpression="SET disowned = :d, disowned_time = :t",
-            ExpressionAttributeValues={":d": "true", ":t": now}
+            ExpressionAttributeValues={
+                ":d": "true",
+                ":t": now
+            }
         )
 
 def query_all_versions(object_name):

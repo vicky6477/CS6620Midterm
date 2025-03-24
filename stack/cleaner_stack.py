@@ -26,7 +26,7 @@ class CleanerStack(Stack):
             environment={
                 "DEST_BUCKET": destination_bucket.bucket_name,
                 "TABLE_NAME": table.table_name,
-                "TTL_SECONDS": "80"
+                "TTL_SECONDS": str(ttl_seconds)
             }
         )
 

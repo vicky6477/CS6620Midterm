@@ -44,11 +44,11 @@ class ReplicatorStack(Stack):
 
         # 
         src_bucket.add_event_notification(
-            s3.EventType.OBJECT_CREATED_PUT,
+            s3.EventType.OBJECT_CREATED,
             s3n.LambdaDestination(replicator_lambda)
         )
 
         src_bucket.add_event_notification(
-            s3.EventType.OBJECT_REMOVED_DELETE,
+            s3.EventType.OBJECT_REMOVED,
             s3n.LambdaDestination(replicator_lambda)
         )
